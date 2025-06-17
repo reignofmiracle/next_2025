@@ -1,5 +1,7 @@
 fn main() {
     println!("Hello, world!");
+
+    c8();
 }
 
 fn c1() {
@@ -46,8 +48,36 @@ fn c6() {
 }
 
 fn c7() {
-    let v = vec![100, 32, 57];
+    let mut v = vec![100, 32, 57];
     for i in &mut v {
         *i += 50;
     }
+}
+
+fn c8() {
+    use std::collections::HashMap;
+
+    let mut scores = HashMap::new();
+
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Red"), 50);
+
+    let score = scores.get(&String::from("Blue")).copied().unwrap_or(0);
+    println!("value is {score}");
+
+    for (key, value) in &scores {
+        println!("{key}: {value}");
+    }
+}
+
+fn c9() {
+    use std::collections::HashMap;
+
+    let field_name = String::from("test");
+    let field_value = String::from("sjflajfjf");
+
+    let mut map = HashMap::new();
+    map.insert(field_name, field_value);
+
+    println!("{field_name}");
 }
