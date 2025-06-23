@@ -1,3 +1,4 @@
+mod lifetime;
 mod traits;
 
 fn main() {
@@ -8,6 +9,8 @@ fn main() {
     f3();
 
     traits::trait_main();
+
+    lifetime::lifetime_main();
 }
 
 fn f1() {
